@@ -6,11 +6,13 @@ We appreciate your interest in Fresh Energy, and we want to thank you for taking
 
 At Fresh Energy, smart meter data is at the core of what we do. We want to see what you can do with it.
 
-The challenge is to read from a stream of smart meter data, and display the meter's consumption in real time, on a web page. We will provide you with a single `.jar` file that produces the data stream. We want to see you use [React](https://reactjs.org/) on the frontend, and [Spring Boot](https://spring.io/projects/spring-boot) for the backend. When you're finished, your live graph should be a pleasure to behold. Here's a concept wireframe for how it may look:
+The challenge is to read from a stream of smart meter data, and display the meter's consumption in real time, on a web page. We will provide you with a single `.jar` file that produces the data stream. We want to see you use [React](https://reactjs.org/) on the frontend, and [Spring Boot](https://spring.io/projects/spring-boot) for the backend. Your submission should be easy to run in a cloud environment like [AWS](https://aws.amazon.com/).
+
+## Frontend presentation
+Here's a concept wireframe for how your frontend may look, to give you some inspiration:
 
 
 INSERT GRAPH WIREFRAME HERE
-
 
 ## Data stream format
 
@@ -59,9 +61,13 @@ Status messages might also contain additional fields that arrive unexpectedly.
 As we said at the top, we want to see you develop an application using `React` and `Spring Boot`. Aside from that, you have a lot of freedom. Feel free to choose technologies you enjoy or feel comfortable with. Choose an approach that challenges you to come up with an elegant solution.
 
 We will examine your submission looking for:
- * A clean solution
- * Clear documentation
+ * A clean solution that meets the requirements
+ * Clear documentation on how to run it
  * Adequate test coverage
  * Useful logging
  * Reliable security
  * Your own personal flair
+
+## How to submit
+
+Your recruitment contact will provide you with an email address to which you should send your completed submission. This should be in the form of a zipped folder, containing all resources necessary to run the project, documentation, and anything else you need to include.
