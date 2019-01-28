@@ -12,7 +12,7 @@ The challenge is to read from a stream of smart meter data, and display the mete
 Here's a concept wireframe for how your frontend may look, to give you some inspiration:
 
 
-INSERT GRAPH WIREFRAME HERE
+![Wireframe](images/graph.png "Wireframe")
 
 ## Data stream format
 
