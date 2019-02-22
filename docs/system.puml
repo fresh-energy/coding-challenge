@@ -13,4 +13,5 @@ Client --> Server: Reply with sum of meter A energy readings
 
 WebClient -> Client: Get readings (meter A)
 Client --> WebClient: Return readings (meter A)
+WebClient -> WebClient: Display readings
 @enduml
