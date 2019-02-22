@@ -1,0 +1,16 @@
+@startuml
+
+Server -> Server: Startup
+Server -> Server: Wait for connections on port X
+
+Client -> Server: Connect to port X
+
+Server -> Client: Send reading (meter A)
+Server -> Client: Send reading (meter B)
+Server -> Client: Send reading (meter C)
+Server -> Client: Send control message (sum A)
+Client --> Server: Reply with sum of meter A energy readings
+
+WebClient -> Client: Get readings (meter A)
+Client --> WebClient: Return readings (meter A)
+@enduml
