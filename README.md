@@ -73,7 +73,7 @@ The response message will be of the format:
 
 ## System overview
 
-
+![Overview](https://github.com/fresh-energy/coding-challenge/raw/master/docs/system.png "Overview")
 
 ## What we're looking for
 
