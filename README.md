@@ -71,6 +71,10 @@ The response message will be of the format:
 }
 ```
 
+## System overview
+
+
+
 ## What we're looking for
 
 As we said at the top, we want to see you develop an application using technologies you like, but ideally `React` and `Spring Boot`. Aside from that, you have a lot of freedom. Choose an approach that challenges you to come up with an elegant solution.
