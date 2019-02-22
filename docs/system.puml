@@ -1,5 +1,15 @@
 @startuml
 
+box "We provide"
+    participant Server
+end box
+
+box "Your task" #Lightblue
+        participant Client
+        participant WebClient
+end box
+
+
 Server -> Server: Startup
 Server -> Server: Wait for connections on port X
 
