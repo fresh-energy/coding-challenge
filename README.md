@@ -6,11 +6,10 @@ We appreciate your interest in Fresh Energy, and we want to thank you for taking
 
 At Fresh Energy, smart meter data is at the core of what we do. We want to see what you can do with it.
 
-The challenge is to read from a stream of smart meter data, and display the meter's consumption in real time, on a web page. We will provide you with a single `.jar` file that produces the data stream. We want to see you use [React](https://reactjs.org/) on the frontend, and [Spring Boot](https://spring.io/projects/spring-boot) for the backend. Your submission should be easy to run in a cloud environment like [AWS](https://aws.amazon.com/).
+The challenge is to read from a stream of simulated smart meter data, display the meter's consumption in real time, respond correctly to control messages in the stream, and display the meter data on a web page. We will provide you with a single `.jar` file that produces the data stream. You can use whatever technologies you feel comfortable with, but we would encourage you to match our [stack](https://stackshare.io/fresh-energy-gmbh/fresh-energy). We use [React](https://reactjs.org/) on the frontend, and [Spring Boot](https://spring.io/projects/spring-boot) for the backend. Your submission should be easy to run in a cloud environment like [AWS](https://aws.amazon.com/).
 
 ## Frontend presentation
 Here's a concept wireframe for how your frontend may look, to give you some inspiration:
-
 
 ![Wireframe](images/graph.png "Wireframe")
 
@@ -18,47 +17,63 @@ Here's a concept wireframe for how your frontend may look, to give you some insp
 
 Our `.jar` will produce a stream of JSON messages in TCP packets. This stream will include data for several smart meters, including consumption data and status messages on the health of the smart meters.
 
-### Consumption messages
+You can run the application with `java -jar readings-server.jar <port> <meters-count>`
+
+For example, to run on port 10001, transmitting data for 5 meters, run `java -jar readings-server.jar 10001 5`
+
+### Readings messages
 
 Will be of the format:
 
 ```json
 {
-  "meterId": "testMeter1",
-  "timestamp": "1548687561760",
-  "data": {
-    "power": "1300W",
-    "voltage": "230.19V",
-    "frequency": "50.023Hz"
+  "type" : "readings",
+  "payload" : {
+    "meterId": "testMeter1",
+    "timestamp": "1548687561760",
+    "data": {
+      "energy": "1234",
+      "power": "1300",
+      "voltage": "230.19",
+      "frequency": "50.023"
+    }
   }
 }
 ```
 
-The `timestamp` field is represented as a unix timestamp, including milliseconds. The `power`, `voltage` and `frequency` fields will all vary from time to time. As mentioned, we will send messages for several smart meters.
+The `timestamp` field is represented as a unix timestamp, including milliseconds. The `energy`, `power`, `voltage` and `frequency` fields will all vary from time to time. As mentioned, we will send messages for several smart meters. Your frontend application should display a graph of `power` values over time, and the sum of `energy` values received.
 
-
-### Status messages:
+### Control messages:
 
 Will be of the format:
  
 ```json
 {
-  "meterId": "testMeter2",
-  "timestamp": "1548687727341",
-  "status": {
-    "transmission_quality": "good",
-    "internet_connectivity": "good",
-    "system_uptime": "250 days",
-    "messages_sent": 64739
+  "type": "control",
+  "payload" : {
+    "meterId": "1",
+    "port": "23456"
   }
 }
 ```
 
-Status messages might also contain additional fields that arrive unexpectedly.
+When a control message arrives, your client application should calculate the sum of `energy` values received for that meter, and respond to the message on the port mentioned in the control message.
+
+The response message will be of the format:
+
+```json
+{
+  "type": "response",
+  "payload" : {
+    "meterId": "1",
+    "sum": "23456"
+  }
+}
+```
 
 ## What we're looking for
 
-As we said at the top, we want to see you develop an application using `React` and `Spring Boot`. Aside from that, you have a lot of freedom. Feel free to choose technologies you enjoy or feel comfortable with. Choose an approach that challenges you to come up with an elegant solution.
+As we said at the top, we want to see you develop an application using technologies you like, but ideally `React` and `Spring Boot`. Aside from that, you have a lot of freedom. Choose an approach that challenges you to come up with an elegant solution.
 
 We will examine your submission looking for:
  * A clean solution that meets the requirements
