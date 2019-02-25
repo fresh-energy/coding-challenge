@@ -15,11 +15,13 @@ Here's a concept wireframe for how your frontend may look, to give you some insp
 
 ## Data stream format
 
-Our `.jar` will produce a stream of JSON messages in TCP packets. This stream will include data for several smart meters, including consumption data and status messages on the health of the smart meters.
+Our `.jar` will produce a stream of JSON messages in TCP packets. This stream will include data for several smart meters, including consumption data and status messages on the health of the smart meters. Each message will be sent as a singl line ending with LF. It is also expected that control messages sent by client ending with LF. 
 
 You can run the application with `java -jar readings-server.jar <port> <meters-count>`
 
-For example, to run on port 10001, transmitting data for 5 meters, run `java -jar readings-server.jar 10001 5`
+For example, to run on port 10001, transmitting data for 5 meters, run `java -jar readings-server.jar 10001 5`.
+
+Note: the ports betwean 9000..(9000 + number_of_meters will) be reserved for controll messages, make sure that does ports are free for usage.
 
 ### Readings messages
 
