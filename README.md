@@ -27,15 +27,15 @@ Will be of the format:
 
 ```json
 {
-  "type" : "readings",
+  "type" : "READINGS",
   "payload" : {
     "meterId": "testMeter1",
-    "timestamp": "1548687561760",
+    "timestamp": 1548687561760,
     "data": {
-      "energy": "1234",
-      "power": "1300",
-      "voltage": "230.19",
-      "frequency": "50.023"
+      "energy": 1234,
+      "power": 1300,
+      "voltage": 230.19,
+      "frequency": 50.023
     }
   }
 }
@@ -49,7 +49,7 @@ Will be of the format:
  
 ```json
 {
-  "type": "control",
+  "type": "CONTROL",
   "payload" : {
     "meterId": "1",
     "port": "23456"
@@ -63,10 +63,10 @@ The response message will be of the format:
 
 ```json
 {
-  "type": "response",
+  "type": "SUM_CONTROL",
   "payload" : {
     "meterId": "1",
-    "sum": "23456"
+    "sum": 23456
   }
 }
 ```
