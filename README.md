@@ -21,7 +21,7 @@ You can run the application with `java -jar readings-server.jar <port> <meters-
 
 For example, to run on port 10001, transmitting data for 5 meters, run `java -jar readings-server.jar 10001 5`.
 
-Note: the ports betwean 9000..(9000 + number_of_meters will) be reserved for controll messages, make sure that does ports are free for usage.
+Note: the ports betwean 9000..(9000 + number_of_meters) will be used for receiving controll messages, make sure that does ports are free for usage.
 
 ### Readings messages
 
