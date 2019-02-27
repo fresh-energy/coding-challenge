@@ -15,7 +15,7 @@ Here's a concept wireframe for how your frontend may look, to give you some insp
 
 ## Data stream format
 
-Our `.jar` will produce a stream of JSON messages in TCP packets. This stream will include data for several smart meters, including consumption data and status messages on the health of the smart meters. Each message will be sent as a singl line ending with LF. It is also expected that control messages sent by client ending with LF. 
+Our `.jar` will produce a stream of JSON messages in TCP packets. This stream will include data for several smart meters, including consumption data and status messages on the health of the smart meters. Each message will be sent as a singl line ending with LF. It is also expected that control messages sent by client ending with LF. You will find the `.jar` file in the root of this repo with the name `readings-server.jar`.
 
 You can run the application with `java -jar readings-server.jar <port> <meters-count>`
 
@@ -75,7 +75,11 @@ The response message will be of the format:
 
 To check if your result is correct there are two options: 
 
-* you can consume back the message sent by the server, that would be in the following format: `{"expected":24030, "received": 20838 }`
+* you can consume back the message sent by the server, that would be in the following format: 
+
+```json
+{"expected":24030, "received": 20838 }
+```
 * or just go to where you're runnning the `.jar` file and check the logs (it will print the message in the same format as above)
 
 ## System overview
