@@ -93,10 +93,11 @@ As we said at the top, we want to see you develop an application using technolog
 We will examine your submission looking for:
  * A clean solution that meets the requirements
  * Clear documentation on how to run it
- * Adequate test coverage
+ * Adequate test coverage (we'll stress test it)
  * Useful logging
  * Reliable security
  * Your own personal flair
+ * Security aspects
 
 ## How to submit
 
