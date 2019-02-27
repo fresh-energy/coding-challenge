@@ -73,6 +73,11 @@ The response message will be of the format:
 }
 ```
 
+To check if your result is correct there are two options: 
+
+* you can consume back the message sent by the server, that would be in the following format: `{"expected":24030, "received": 20838 }`
+* or just go to where you're runnning the `.jar` file and check the logs (it will print the message in the same format as above)
+
 ## System overview
 
 ![Overview](https://github.com/fresh-energy/coding-challenge/raw/master/docs/system.png "Overview")
