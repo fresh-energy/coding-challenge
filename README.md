@@ -2,6 +2,8 @@
 
 We appreciate your interest in Fresh Energy, and we want to thank you for taking your time to carry out our coding challenge. All submissions will be reviewed carefully.
 
+We suggest that you should not spend more than 3-4 hours on the challenge. Even if you haven't completed it at that stage, you can submit what you have done, along with your design or plans for the rest of the project.
+
 ## The problem
 
 At Fresh Energy, smart meter data is at the core of what we do. We want to see what you can do with it.
