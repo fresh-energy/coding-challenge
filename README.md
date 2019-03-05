@@ -59,7 +59,7 @@ Will be of the format:
 }
 ```
 
-When a control message arrives, your client application should calculate the sum of `energy` values received for that meter, and respond to the message on the port mentioned in the control message.
+When a control message arrives, your client application should calculate the sum of `energy` values received for that meter, and respond to the message on the port mentioned in the control message. The server sends one control message per meter and it wait to receive a response for that meter before sending a new control message for that meter. Example: if you got a control message for `meterId`: "1", you'll not receive a new control message for that meter until you send a response back for this meter.
 
 The response message will be of the format:
 
